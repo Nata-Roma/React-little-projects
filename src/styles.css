@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:wght@900&display=swap");
+
+.App {
+  box-sizing: border-box;
+}
+
+.timer-game {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: rgb(100, 197, 197);
+  padding: 20px 0;
+}
+
+.title {
+  font-style: italic;
+  color: rgb(232, 245, 247);
+}
+
+.timer {
+  font-size: 70px;
+  margin-bottom: 30px;
+}
+
+.buttons button {
+  font-size: 20px;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #fff;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: rgb(145, 221, 221);
+}
+
+.buttons button:active {
+  background-color: rgb(122, 187, 187);
+  transform: translate(2px, 1px);
+}
+
+.text {
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text input {
+  margin: 0 20px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 16px;
+  width: 50px;
+}
+
+.box-parent {
+  position: relative;
+  width: 150px;
+  height: 100px;
+  overflow: hidden;
+  background-color: rgb(155, 40, 40);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: 0.3s ease all;
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  width: 500px;
+  height: 100px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  opacity: 0.3;
+  background-image: radial-gradient(
+    rgba(198, 243, 126, 1),
+    rgba(198, 243, 126, 0)
+  );
+  pointer-events: none;
+}
+
+.boom {
+  /* font-size: 80px; */
+  animation-name: explosion;
+  animation-duration: 4s;
+}
+
+@keyframes explosion {
+  from {
+    font-size: 5px;
+  }
+  to {
+    font-size: 150px;
+    background-color: #000;
+  }
+}
+
+nav {
+  display: flex;
+  width: 750px;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  width: 150px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(66, 42, 121);
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.viewport {
+  background-color: rgb(101, 65, 184);
+  width: 750px;
+  height: 450px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.link.active {
+  background-color: rgb(101, 65, 184);
+}
+
+.choice-game {
+  background-color: rgb(125, 173, 136);
+  color: rgb(231, 231, 231);
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.choice-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  align-items: baseline;
+}
+
+.choice-wins span {
+  color: greenyellow;
+  font-size: 30px;
+}
+
+.choice-losses span {
+  color: red;
+  font-size: 30px;
+}
+
+.choice-items {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.button-choice {
+  display: flex;
+
+  /* width: 150px; */
+  margin: 0 20px 20px;
+}
+
+.button-item {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  border-radius: 50%;
+  justify-content: center;
+  margin: 10px;
+  font-size: 20px;
+  background-color: rgb(228, 123, 123);
+  border: none;
+  outline: none;
+  box-shadow: 0 3px 7px rgb(138, 74, 74);
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+.button-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgb(138, 74, 74);
+}
+
+.button-item:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 7px rgb(58, 33, 33);
+}
+
+.comp-choice {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  justify-content: center;
+  margin: 10px auto;
+  font-size: 20px;
+  background-color: rgb(69, 148, 172);
+  box-shadow: 0 3px 7px rgb(48, 101, 117);
+  color: #fff;
+}
+
+.popup {
+  background-color: rgb(0, 0, 0, 0.7);
+  height: 100vh;
+  width: 100%;
+  padding-top: 100px;
+  z-index: 50;
+  /* display: flex; */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.popup-info {
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 30px 0;
+  position: relative;
+}
+
+.popup-text {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-state {
+  font-size: 30px;
+  color: #fff;
+}
+
+.play-again {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -30%);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 25px;
+  padding: 15px 30px;
+  background-color: rgb(240, 88, 182);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.play-again:hover {
+  background-color: rgb(185, 52, 134);
+}
+
+.canvas {
+  position: relative;
+  background-image: url("https://i.imgur.com/noNWRPk.png");
+}
+
+.buttons-move {
+  position: absolute;
+  top: 310px;
+  right: 15px;
+}
+
+.buttons-upper {
+  display: flex;
+  justify-content: center;
+}
+
+.button-canvas {
+  width: 60px;
+  background: #43b982;
+  padding: 10px 5px;
+  font-size: 16px;
+  color: #ccc;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px black;
+  transition: all 0.2s ease;
+}
+
+.button-canvas:hover {
+  transform: translateY(-2px);
+  color: #fff;
+  box-shadow: 0 2px 7px black;
+}
+
+.button-canvas:active {
+  transform: translateY(2px);
+  color: #fff;
+  box-shadow: 0 2px 3px black;
+}
+
+.talk {
+  background-color: #333;
+  padding: 30px;
+}
+
+.talk-title {
+  color: yellow;
+  font-family: "Grandstander", cursive;
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.talk-container {
+  margin-bottom: 15px;
+}
+
+.input-number {
+  width: 50px;
+  background-color: rgba(256, 256, 256, 0.25);
+  color: #fff;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin: 0 5px 5px 0;
+}
+
+.input-text {
+  width: 400px;
+  background-color: rgba(256, 256, 256, 0.25);
+  color: #fff;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin: 0 5px 5px 0;
+}
+
+.talk-btn {
+  background-color: rgba(256, 256, 256, 0.25);
+  color: rgba(256, 256, 256, 0.5);
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.talk-btn:hover {
+  color: rgba(256, 256, 256, 1);
+}
+
+.talk-btn:active {
+  color: rgba(256, 256, 256, 1);
+  transform: translateY(2px);
+}
+
+.btn-timer {
+  font-size: 16px;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin: 0 5px 25px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-timer:hover {
+  transform: translateY(-2px);
+}
+
+.btn-timer:active {
+  transform: translateY(2px);
+}
+
+.start {
+  background-color: rgb(10, 128, 108);
+  transition: all 0.2s ease;
+}
+
+.start:hover {
+  background-color: rgb(10, 105, 89);
+}
+
+.stop {
+  background-color: rgb(199, 43, 56);
+  transition: all 0.2s ease;
+}
+
+.stop:hover {
+  background-color: rgb(170, 34, 45);
+}
+
+.speaking {
+  display: inline-block;
+  color: rgba(256, 256, 256, 0.3);
+}
+
+.calendar-picker {
+  width: 500px;
+  background-color: rgb(213, 212, 236);
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.date-chooser {
+  margin: 0 auto 15px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.date-chooser-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: black;
+  transition: all 0.2s ease;
+  padding: 10px 10px 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.date-chooser-button span {
+  display: block;
+  font-size: 45px;
+}
+
+.date-chooser-button:hover {
+  background-color: rgb(188, 187, 214);
+}
+
+.calendar {
+  background-color: rgb(47, 18, 92);
+  border-radius: 15px;
+  padding: 10px 40px 10px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 60px);
+}
+
+.calendar-day {
+  color: rgb(129, 110, 182);
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  align-self: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 0;
+  transition: all 0.2s ease;
+}
+
+.calendar-day:hover {
+  color: rgb(203, 194, 229);
+  background-color: rgb(27, 11, 51);
+}
+
+.calendar-day.is-selected {
+  color: rgb(203, 194, 229);
+  background-color: rgb(27, 11, 51);
+}
